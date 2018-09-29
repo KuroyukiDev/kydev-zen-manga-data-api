@@ -1,7 +1,7 @@
 const express = require('express');
-
-
 const port = process.env.PORT || 3000;
+
+const mangalib = require('./manga-library');
 
 var app = express();
 
@@ -22,6 +22,10 @@ app.get('/datetime', (req, res) => {
           secs: 17
        }
    });
+});
+
+app.get('/tomochanwaonnanoko', (req, res) => {
+    res.send(mangalib.tomochanWaOnnanoko);
 });
 
 app.listen(port, () => {
